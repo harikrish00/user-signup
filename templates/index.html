@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>
+      Krish blog page
+    </title>
+  </head>
+  <body>
+    <h1> Welcome to the blog </h1>
+    <form method="post">
+      <label>
+        Name:
+      </label>
+      <input type="text" name="username" value="{{username}}" />
+      <span style="color: red;">
+        {% if username_error %}
+          {{ username_error }}
+        {% endif %}
+      </span><br><br>
+      <label>
+        Password:
+      </label>
+      <input type="password" name="password" />
+      <span style="color: red;">
+        {% if invalid_password %}
+          {{ invalid_password }}
+        {% endif %}
+      </span><br><br>
+      <label>
+        Verify Password:
+      </label>
+      <input type="password" name="verify" />
+      <span style="color: red;">
+        {% if verify_password_error %}
+          {{ verify_password_error }}
+        {% endif %}
+      </span><br><br>
+      <label>
+        Email(optional):
+      </label>
+      <input type="text" name="email" value="{{ email }}"/>
+      <span style="color: red;">
+        {% if invalid_email %}
+          {{ invalid_email }}
+        {% endif %}
+      </span><br><br>
+      <input type="submit" />
+  </body>
+</html>
